@@ -38,7 +38,7 @@ def hough(edges, threshold, rhoCount=180, thetaCount=180):
 
     return houghSpace, lines
 
-def processHough(image, lines):
+def displayHoughLines(image, lines):
     if len(lines) > 0:
         for line in lines:
             rho, theta = line[0]
@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     houghSpace, lines = hough(edges, 100)
     display('Hough Space', houghSpace)
-    display('Hough', processHough(image, lines))
+    display('Hough', displayHoughLines(image, lines))
 
     print('Done!')
 
